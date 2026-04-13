@@ -101,6 +101,18 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (selectedService || lightboxImage || activeLegalModal || lightboxIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedService, lightboxImage, activeLegalModal, lightboxIndex]);
+
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (lightboxIndex !== null && selectedService?.galleryImages) {
@@ -637,7 +649,7 @@ export default function App() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl max-h-[90vh] bg-zinc-900 rounded-3xl shadow-2xl overflow-y-auto flex flex-col md:flex-row border border-zinc-800"
+              className="relative w-full max-w-6xl max-h-[85vh] bg-zinc-900 rounded-3xl shadow-2xl overflow-y-auto overscroll-contain flex flex-col md:flex-row border border-zinc-800"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -662,8 +674,8 @@ export default function App() {
               </div>
 
               {/* Right Area: Scrollable Masonry/Grid Gallery */}
-              <div className="w-full md:w-2/3 p-6 overflow-y-auto max-h-[50vh] md:max-h-[90vh] custom-scrollbar">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div className="w-full md:w-2/3 p-6 overflow-y-auto max-h-[50vh] md:max-h-[85vh] custom-scrollbar">
+                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pb-8">
                   {selectedService.galleryImages?.map((imgUrl: string, index: number) => (
                     <div 
                       key={index} 
