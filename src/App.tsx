@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Phone, 
   Menu, 
@@ -10,6 +10,7 @@ import {
   Mail, 
   MapPin, 
   ArrowRight,
+  ArrowUp,
   ChevronRight,
   ChevronLeft,
   Construction,
@@ -89,6 +90,16 @@ export default function App() {
   const [selectedService, setSelectedService] = useState<any>(null);
   const [activeLegalModal, setActiveLegalModal] = useState<'pravno' | 'zasebnost' | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -347,7 +358,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
+            <div 
+              className="flex-shrink-0 flex items-center cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img 
                 src="https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1772708956/mm-inoks-ograje-logo_ydpa9i.png" 
                 alt="Logotip MM Inoks - Specialist za inox in alu ograje ter kovinske konstrukcije" 
@@ -953,6 +967,22 @@ export default function App() {
               )}
             </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* BACK TO TOP BUTTON */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-8 right-8 z-50 p-3 bg-lime-500 hover:bg-lime-400 text-white rounded-full shadow-lg shadow-lime-900/20 hover:shadow-lime-500/30 transition-all duration-300"
+            aria-label="Na vrh strani"
+          >
+            <ArrowUp className="w-6 h-6" />
+          </motion.button>
         )}
       </AnimatePresence>
     </div>
