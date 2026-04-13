@@ -642,14 +642,14 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-12 bg-zinc-950/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
             onClick={() => setSelectedService(null)}
           >
             <motion.div 
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl max-h-[85vh] bg-zinc-900 rounded-3xl shadow-2xl overflow-y-auto overscroll-contain flex flex-col md:flex-row border border-zinc-800"
+              className="relative w-full max-w-3xl max-h-[90dvh] bg-zinc-900 rounded-2xl flex flex-col overflow-hidden border border-zinc-800"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -660,32 +660,35 @@ export default function App() {
                 <X className="w-6 h-6" />
               </button>
 
-              {/* Left Sidebar: Text Content */}
-              <div className="w-full md:w-1/3 p-8 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-zinc-800 bg-zinc-900/50">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-lime-500/10 text-lime-500 rounded-xl">
-                    <selectedService.icon className="w-8 h-8" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-white">{selectedService.title}</h2>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-lg mb-4">
-                  {selectedService.fullDesc}
-                </p>
-              </div>
-
-              {/* Right Area: Scrollable Masonry/Grid Gallery */}
-              <div className="w-full md:w-2/3 p-6 overflow-y-auto max-h-[50vh] md:max-h-[85vh] custom-scrollbar">
-                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pb-8">
-                  {selectedService.galleryImages?.map((imgUrl: string, index: number) => (
-                    <div 
-                      key={index} 
-                      onClick={() => setLightboxIndex(index)}
-                      className="relative rounded-xl overflow-hidden cursor-pointer group"
-                    >
-                      <img loading="lazy" src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/30 transition-colors"></div>
+              {/* SCROLLABLE CONTENT AREA */}
+              <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
+                <div className="flex flex-col gap-6 mt-8 md:mt-0">
+                  {/* Title Area */}
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-lime-500/10 text-lime-500 rounded-xl">
+                      <selectedService.icon className="w-8 h-8" />
                     </div>
-                  ))}
+                    <h2 className="text-3xl font-bold text-white">{selectedService.title}</h2>
+                  </div>
+                  
+                  {/* Text Content */}
+                  <p className="text-gray-300 leading-relaxed text-lg">
+                    {selectedService.fullDesc}
+                  </p>
+
+                  {/* Gallery */}
+                  <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 mt-2">
+                    {selectedService.galleryImages?.map((imgUrl: string, index: number) => (
+                      <div 
+                        key={index} 
+                        onClick={() => setLightboxIndex(index)}
+                        className="relative rounded-xl overflow-hidden cursor-pointer group"
+                      >
+                        <img loading="lazy" src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-110" />
+                        <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/30 transition-colors"></div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
