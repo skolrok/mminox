@@ -1,94 +1,45 @@
 import React, { useState } from 'react';
 import { ChevronRight, CheckCircle, AlertCircle } from 'lucide-react';
-import { motion } from 'motion/react';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
-    setErrorMessage('');
+    setFormStatus('submitting');
+    
+    // Gather all form data automatically
+    const formData = new FormData(e.currentTarget);
+    
+    // Append the hidden field required by the PHP script
+    formData.append('tip_obrazca', 'kontakt');
 
     try {
-      const response = await fetch("https://formspree.io/f/YOUR_ENDPOINT_ID", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(formData)
+      const response = await fetch('/poslji.php', {
+        method: 'POST',
+        body: formData,
       });
 
+      // The PHP script might return a redirect, which fetch follows. 
+      // If response.ok is true, it means it worked.
       if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormStatus('success');
+        e.currentTarget.reset(); // Clear the form
+        
+        // Optional: Reset button after 5 seconds
+        setTimeout(() => setFormStatus('idle'), 5000);
       } else {
-        const data = await response.json();
-        if (Object.hasOwn(data, 'errors')) {
-          setErrorMessage(data.errors.map((error: any) => error.message).join(", "));
-        } else {
-          setErrorMessage("Prišlo je do napake pri pošiljanju. Prosimo, poskusite znova.");
-        }
-        setStatus('error');
+        setFormStatus('error');
       }
     } catch (error) {
-      setStatus('error');
-      setErrorMessage("Prišlo je do napake pri povezavi. Prosimo, preverite internetno povezavo.");
+      console.error("Submission failed:", error);
+      setFormStatus('error');
     }
   };
-
-  if (status === 'success') {
-    return (
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="bg-zinc-800/30 p-8 rounded-2xl border border-lime-500/30 h-full flex flex-col items-center justify-center text-center"
-      >
-        <div className="bg-lime-500/10 p-4 rounded-full mb-6">
-          <CheckCircle size={48} className="text-lime-500" />
-        </div>
-        <h3 className="text-2xl font-bold text-white mb-4">Hvala za povpraševanje!</h3>
-        <p className="text-gray-300 text-lg">
-          Vaše sporočilo je bilo uspešno poslano. <br />
-          <span className="text-lime-400 font-medium">Kmalu vas bomo kontaktirali.</span>
-        </p>
-        <button 
-          onClick={() => setStatus('idle')}
-          className="mt-8 text-sm text-gray-500 hover:text-white underline transition-colors"
-        >
-          Pošlji novo sporočilo
-        </button>
-      </motion.div>
-    );
-  }
 
   return (
     <div className="bg-zinc-800/30 p-8 rounded-2xl border border-white/5">
       <h3 className="text-xl font-bold mb-6 text-white">Pošljite povpraševanje</h3>
-      
-      {status === 'error' && (
-        <div className="mb-6 bg-red-500/10 border border-red-500/20 rounded-lg p-4 flex items-start">
-          <AlertCircle className="text-red-500 mt-0.5 mr-3 flex-shrink-0" size={18} />
-          <p className="text-red-200 text-sm">{errorMessage}</p>
-        </div>
-      )}
 
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
@@ -98,8 +49,6 @@ export default function ContactForm() {
             id="name" 
             name="name"
             required
-            value={formData.name}
-            onChange={handleChange}
             className="w-full bg-zinc-900/50 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors"
             placeholder="Janez Novak"
           />
@@ -112,8 +61,6 @@ export default function ContactForm() {
             id="email" 
             name="email"
             required
-            value={formData.email}
-            onChange={handleChange}
             className="w-full bg-zinc-900/50 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors"
             placeholder="janez@primer.si"
           />
@@ -125,8 +72,6 @@ export default function ContactForm() {
             type="tel" 
             id="phone" 
             name="phone"
-            value={formData.phone}
-            onChange={handleChange}
             className="w-full bg-zinc-900/50 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors"
             placeholder="040 123 456"
           />
@@ -139,33 +84,46 @@ export default function ContactForm() {
             name="message"
             required
             rows={4} 
-            value={formData.message}
-            onChange={handleChange}
             className="w-full bg-zinc-900/50 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors resize-none"
             placeholder="Zanima me izdelava..."
           ></textarea>
         </div>
         
-        <button 
-          type="submit" 
-          disabled={status === 'submitting'}
-          className="w-full bg-lime-500 hover:bg-lime-400 disabled:bg-lime-500/50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg shadow-lime-900/20 flex items-center justify-center group"
-        >
-          {status === 'submitting' ? (
-            <span className="flex items-center">
-              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              Pošiljam...
-            </span>
-          ) : (
-            <>
-              Pošlji povpraševanje
-              <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
-            </>
+        <div className="pt-2">
+          <button 
+            type="submit" 
+            disabled={formStatus === 'submitting' || formStatus === 'success'}
+            className={`w-full font-bold py-4 rounded-lg transition-all duration-300 shadow-lg shadow-lime-900/20 flex items-center justify-center group ${
+              formStatus === 'success' 
+                ? 'bg-green-500 text-white cursor-not-allowed' 
+                : 'bg-lime-500 hover:bg-lime-400 disabled:bg-lime-500/50 disabled:cursor-not-allowed text-white'
+            }`}
+          >
+            {formStatus === 'submitting' ? (
+              <span className="flex items-center">
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Pošiljanje...
+              </span>
+            ) : formStatus === 'success' ? (
+              <span className="flex items-center">
+                <CheckCircle className="mr-2" size={20} />
+                Uspešno poslano!
+              </span>
+            ) : (
+              <>
+                Pošlji povpraševanje
+                <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
+              </>
+            )}
+          </button>
+          
+          {formStatus === 'error' && (
+            <p className="text-red-500 text-sm mt-3 text-center">Prišlo je do napake pri pošiljanju. Prosimo, poskusite znova.</p>
           )}
-        </button>
+        </div>
       </form>
     </div>
   );

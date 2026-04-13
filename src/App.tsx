@@ -39,7 +39,7 @@ const SolimatPromo = () => {
         
         {/* Background Image */}
         <img 
-          src="https://res.cloudinary.com/ddl75cyhk/image/upload/v1772640105/referenca-gorenjska-hisa-gore-vecerna-pergola-led_o40wsr.webp" 
+          src="https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1772640105/referenca-gorenjska-hisa-gore-vecerna-pergola-led_o40wsr.webp" 
           alt="Moderne bioklimatske pergole Solimat po meri" 
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
         />
@@ -108,61 +108,61 @@ export default function App() {
     // --- OGRAJE ---
     {
       id: 1,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028814/notranja-stopniscna-ograja-34.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028814/notranja-stopniscna-ograja-34.webp",
       category: "ograje",
       alt: "Moderna notranja stopniščna ograja"
     },
     {
       id: 2,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028772/notranja-stopniscna-ograja-127.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028772/notranja-stopniscna-ograja-127.webp",
       category: "ograje",
       alt: "Notranja inox stopniščna ograja"
     },
     {
       id: 3,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028229/zunanja-steklena-ograja-24.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028229/zunanja-steklena-ograja-24.webp",
       category: "ograje",
       alt: "Zunanja steklena ograja visoke kakovosti"
     },
     {
       id: 4,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028854/prasno-lakirana-kovinska-ograja-32.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028854/prasno-lakirana-kovinska-ograja-32.webp",
       category: "ograje",
       alt: "Prašno lakirana kovinska ograja za dvorišče"
     },
     {
       id: 5,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028100/moderna-aluminijasta-ograja-7.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028100/moderna-aluminijasta-ograja-7.webp",
       category: "ograje",
       alt: "Moderna aluminijasta ograja"
     },
     {
       id: 6,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775029062/prasno-lakirana-kovinska-ograja-115.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775029062/prasno-lakirana-kovinska-ograja-115.webp",
       category: "ograje",
       alt: "Antracit prašno lakirana dvoriščna ograja"
     },
     {
       id: 7,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028260/ograja-iz-perforirane-plocevine-11.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028260/ograja-iz-perforirane-plocevine-11.webp",
       category: "ograje",
       alt: "Moderna ograja iz perforirane pločevine"
     },
     {
       id: 8,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028242/laserski-razrez-ograja-10.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028242/laserski-razrez-ograja-10.webp",
       category: "ograje",
       alt: "Ograja z vzorcem laserskega razreza"
     },
     {
       id: 9,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028233/laserski-razrez-ograja-2.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028233/laserski-razrez-ograja-2.webp",
       category: "ograje",
       alt: "Unikatna ograja - laserski razrez kovine"
     },
     {
       id: 10,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028279/ograja-iz-perforirane-plocevine-17.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028279/ograja-iz-perforirane-plocevine-17.webp",
       category: "ograje",
       alt: "Zunanja ograja iz perforirane pločevine"
     },
@@ -170,13 +170,13 @@ export default function App() {
     // --- NADSTREŠKI ---
     {
       id: 11,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028146/inox-nadstresek-terasa-18.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028146/inox-nadstresek-terasa-18.webp",
       category: "nadstreski",
       alt: "Inox nadstrešek za teraso po meri"
     },
     {
       id: 12,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028135/inox-nadstresek-terasa-8.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028135/inox-nadstresek-terasa-8.webp",
       category: "nadstreski",
       alt: "Moderen inox nadstrešek za zaščito terase"
     },
@@ -184,19 +184,19 @@ export default function App() {
     // --- BALKONI ---
     {
       id: 13,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028359/moderni-francoski-balkon-10.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028359/moderni-francoski-balkon-10.webp",
       category: "balkoni",
       alt: "Eleganten in moderni francoski balkon"
     },
     {
       id: 14,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028364/moderni-francoski-balkon-14.webp",
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028364/moderni-francoski-balkon-14.webp",
       category: "balkoni",
       alt: "Minimalistični francoski balkon za zaščito oken"
     },
     {
       id: 15,
-      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028248/ograja-iz-perforirane-plocevine-1.webp", 
+      src: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028248/ograja-iz-perforirane-plocevine-1.webp", 
       category: "ograje",
       alt: "Moderna zunanja dvoriščna ograja in celovita ureditev"
     }
@@ -214,10 +214,10 @@ export default function App() {
       fullDesc: "Perforirane ograje predstavljajo vrhunec modernega dizajna in arhitekture. Izdelane so iz kakovostne pločevine z lasersko izrezanimi vzorci po vaši meri. Ponujajo odlično razmerje med zasebnostjo in zračnostjo, hkrati pa vašemu objektu dajo edinstven, prepoznaven videz. Vse perforirane ograje so strokovno prašno lakirane za maksimalno odpornost proti vremenskim vplivom.",
       icon: LayoutGrid,
       anchorId: "perforirane-ograje",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028260/ograja-iz-perforirane-plocevine-11.webp",
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028260/ograja-iz-perforirane-plocevine-11.webp",
       galleryImages: [
-        ...Array.from({ length: 21 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028303/ograja-iz-perforirane-plocevine-${i + 1}.webp`),
-        ...Array.from({ length: 14 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028238/laserski-razrez-ograja-${i + 1}.webp`)
+        ...Array.from({ length: 21 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028303/ograja-iz-perforirane-plocevine-${i + 1}.webp`),
+        ...Array.from({ length: 14 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028238/laserski-razrez-ograja-${i + 1}.webp`)
       ]
     },
     {
@@ -227,8 +227,8 @@ export default function App() {
       fullDesc: "Prašno lakiranje predstavlja najboljšo zaščito in estetsko nadgradnjo kovinskih elementov. Izbirate lahko med široko paleto RAL barv, z različnimi strukturami (gladko, mat, hrapavo). Ograje so tako maksimalno zaščitene pred korozijo in mehanskimi poškodbami.",
       icon: Droplet,
       anchorId: "prasno-lakirane-ograje",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028854/prasno-lakirana-kovinska-ograja-32.webp",
-      galleryImages: Array.from({ length: 120 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028092/prasno-lakirana-kovinska-ograja-${i + 1}.webp`)
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028854/prasno-lakirana-kovinska-ograja-32.webp",
+      galleryImages: Array.from({ length: 120 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028092/prasno-lakirana-kovinska-ograja-${i + 1}.webp`)
     },
     {
       id: "notranje-in-zunanje-inox-ograje",
@@ -237,10 +237,10 @@ export default function App() {
       fullDesc: "Naše inox ograje so sinonim za trajnost in eleganco. Uporabljamo le najkakovostnejše nerjaveče jeklo (AISI 304 in AISI 316), ki zagotavlja dolgo življenjsko dobo brez rjavenja. Nudimo celovito storitev od izmere do strokovne montaže.",
       icon: Shield,
       anchorId: "notranje-in-zunanje-inox-ograje",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028814/notranja-stopniscna-ograja-34.webp",
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028814/notranja-stopniscna-ograja-34.webp",
       galleryImages: [
-        ...Array.from({ length: 130 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028412/notranja-stopniscna-ograja-${i + 1}.webp`),
-        ...Array.from({ length: 39 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028092/moderna-zunanja-dvoriscna-ograja-${i + 1}.webp`)
+        ...Array.from({ length: 130 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028412/notranja-stopniscna-ograja-${i + 1}.webp`),
+        ...Array.from({ length: 39 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028092/moderna-zunanja-dvoriscna-ograja-${i + 1}.webp`)
       ]
     },
     {
@@ -250,8 +250,8 @@ export default function App() {
       fullDesc: "Francoski balkoni so popolna rešitev za objekte s velikimi oknami od tal do stropa. Zagotavljajo popolno varnost pred padci, hkrati pa ohranjajo maksimalen pretok naravne svetlobe. Na voljo so v izvedbah iz inoxa, prašno lakirane kovine ali v kombinaciji z varnostnim kaljenim steklom.",
       icon: Home,
       anchorId: "francoski-balkoni",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028359/moderni-francoski-balkon-10.webp",
-      galleryImages: Array.from({ length: 14 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028365/moderni-francoski-balkon-${i + 1}.webp`)
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028359/moderni-francoski-balkon-10.webp",
+      galleryImages: Array.from({ length: 14 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028365/moderni-francoski-balkon-${i + 1}.webp`)
     },
     {
       id: "steklene-ograje",
@@ -260,10 +260,10 @@ export default function App() {
       fullDesc: "Steklene ograje so prva izbira za sodobne arhitekturne rešitve. Ustvarjajo občutek odprtosti, prostornosti in luksuza. Za izdelavo uporabljamo izključno visoko kakovostno, lepljeno in kaljeno varnostno steklo, ki zagotavlja najvišje standarde varnosti ob brezhibnem estetskem videzu.",
       icon: PanelRight,
       anchorId: "steklene-ograje",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028229/zunanja-steklena-ograja-24.webp",
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028229/zunanja-steklena-ograja-24.webp",
       galleryImages: [
-        ...Array.from({ length: 25 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028230/zunanja-steklena-ograja-${i + 1}.webp`),
-        ...Array.from({ length: 22 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028189/notranja-steklena-ograja-${i + 1}.webp`)
+        ...Array.from({ length: 25 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028230/zunanja-steklena-ograja-${i + 1}.webp`),
+        ...Array.from({ length: 22 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028189/notranja-steklena-ograja-${i + 1}.webp`)
       ]
     },
     {
@@ -273,8 +273,8 @@ export default function App() {
       fullDesc: "Aluminijaste ograje so idealna izbira za tiste, ki si želijo trajno in estetsko dovršeno rešitev brez potrebe po vzdrževanju. Aluminij je lahek, a izjemno trden material, ki nikoli ne rjavi. Ponujamo širok spekter profilov in barv (prašno lakiranje), vključno z imitacijami lesa, kar omogoča popolno prilagoditev videzu vašega doma ali poslovnega objekta.",
       icon: Layers,
       anchorId: "alu-ograje",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028100/moderna-aluminijasta-ograja-7.webp",
-      galleryImages: Array.from({ length: 14 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028108/moderna-aluminijasta-ograja-${i + 1}.webp`)
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028100/moderna-aluminijasta-ograja-7.webp",
+      galleryImages: Array.from({ length: 14 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028108/moderna-aluminijasta-ograja-${i + 1}.webp`)
     },
     {
       id: "nadstreski",
@@ -283,8 +283,8 @@ export default function App() {
       fullDesc: "Vrhunski kovinski in inox nadstreški, ki kljubujejo vsem vremenskim razmeram. Nudimo rešitve po meri za pokritje vaših teras, balkonov ali parkirnih mest, vključno z možnostjo integracije steklene strehe za optimalno osvetlitev.",
       icon: Tent,
       anchorId: "nadstreski",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028146/inox-nadstresek-terasa-18.webp",
-      galleryImages: Array.from({ length: 25 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028154/inox-nadstresek-terasa-${i + 1}.webp`)
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028146/inox-nadstresek-terasa-18.webp",
+      galleryImages: Array.from({ length: 25 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028154/inox-nadstresek-terasa-${i + 1}.webp`)
     },
     {
       id: "kovinski-izdelki-po-meri",
@@ -293,10 +293,10 @@ export default function App() {
       fullDesc: "Od unikatnega industrijskega pohištva do kompleksnih nosilnih konstrukcij. Naše inženirsko in varilsko znanje nam omogoča, da uresničimo tudi najbolj specifične in zahtevne vizije naših strank. Vsak izdelek je narejen z mislijo na popolnost.",
       icon: PenTool,
       anchorId: "kovinski-izdelki-po-meri",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775029072/unikatni-kovinski-izdelki-4.webp",
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775029072/unikatni-kovinski-izdelki-4.webp",
       galleryImages: Array.from({ length: 31 }, (_, i) => i + 1)
         .filter(num => num !== 8 && num !== 9)
-        .map(num => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775029072/unikatni-kovinski-izdelki-${num}.webp`)
+        .map(num => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775029072/unikatni-kovinski-izdelki-${num}.webp`)
     },
     {
       id: "xtend-ograje",
@@ -305,8 +305,8 @@ export default function App() {
       fullDesc: "Sistem X-Tend ponuja inovativno rešitev iz prepletenih nerjavečih jeklenic (mrež). Je izjemno lahek, zračen in transparenten, a hkrati neverjetno močan. Odlično se obnese na stopniščih, galerijah ter kot opora za vertikalne ozelenitve oziroma zelene fasade.",
       icon: Network,
       anchorId: "xtend-ograje",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028127/x-tend-mrezna-ograja-inox-16.webp",
-      galleryImages: Array.from({ length: 16 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/v1775028127/x-tend-mrezna-ograja-inox-${i + 1}.webp`)
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028127/x-tend-mrezna-ograja-inox-16.webp",
+      galleryImages: Array.from({ length: 16 }, (_, i) => `https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1775028127/x-tend-mrezna-ograja-inox-${i + 1}.webp`)
     },
     {
       id: "varjenje-vseh-vrst-kovin",
@@ -315,7 +315,7 @@ export default function App() {
       fullDesc: "Specializirani smo za celovito obdelavo kovin na najvišjem nivoju. Nudimo strokovno TIG, MIG in MAG varjenje nerjavečega jekla (inox), aluminija in konstrukcijskih jekel. Za popolne in čiste linije skrbimo z integracijo najsodobnejšega laserskega razreza vseh vrst kovin. Od popravil do zahtevnih industrijskih konstrukcij – zagotavljamo estetske brezhiben zvar in mikronsko natančnost.",
       icon: Hammer,
       anchorId: "varjenje-vseh-vrst-kovin",
-      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/v1772806087/kakovostne-inox-ograje-izdelava_g3cuql.webp",
+      bgImage: "https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1772806087/kakovostne-inox-ograje-izdelava_g3cuql.webp",
       galleryImages: []
     }
   ];
@@ -349,8 +349,8 @@ export default function App() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <img 
-                src="https://res.cloudinary.com/ddl75cyhk/image/upload/v1772708956/mm-inoks-ograje-logo_ydpa9i.png" 
-                alt="MM Inoks - Vrhunske inox in prašno barvane ograje" 
+                src="https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1772708956/mm-inoks-ograje-logo_ydpa9i.png" 
+                alt="Logotip MM Inoks - Specialist za inox in alu ograje ter kovinske konstrukcije" 
                 className="h-12 w-auto object-contain"
               />
             </div>
@@ -433,6 +433,7 @@ export default function App() {
             loop
             muted
             playsInline
+            aria-label="Proizvodnja MM INOKS: Pogled na delavca, ki vari kovinski profil v specializirani delavnici s kovanimi elementi"
             poster="https://res.cloudinary.com/ddl75cyhk/video/upload/so_0/v1772708506/HeroVideo_wg71j5.jpg"
             className="absolute inset-0 w-full h-full object-cover opacity-80"
           >
@@ -453,6 +454,7 @@ export default function App() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
+              className="pb-10"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 Moderne Inox in Prašno Barvane Ograje, <span className="text-lime-400">Narejene za Generacije.</span>
@@ -514,7 +516,8 @@ export default function App() {
             <div className="mb-12 lg:mb-0">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[400px] lg:min-h-[500px]">
                 <img
-                  src="https://res.cloudinary.com/ddl75cyhk/image/upload/v1772806087/kakovostne-inox-ograje-izdelava_g3cuql.webp"
+                  loading="lazy"
+                  src="https://res.cloudinary.com/ddl75cyhk/image/upload/f_auto,q_auto/v1772806087/kakovostne-inox-ograje-izdelava_g3cuql.webp"
                   alt="Kakovostne inox in prašno lakirane ograje - MM Inoks izdelava"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
                 />
@@ -555,9 +558,9 @@ export default function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Naša ponudba</h2>
             <div className="h-1 w-20 bg-lime-500 mx-auto rounded-full"></div>
-            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+            <h2 className="mt-4 text-gray-400 max-w-2xl mx-auto text-base font-normal">
               Specializirani smo za celovite rešitve na področju kovinskih konstrukcij.
-            </p>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -569,8 +572,9 @@ export default function App() {
               >
                 {/* Background Image - Always visible but dimmed, brightens and scales on hover */}
                 <img
+                  loading="lazy"
                   src={service.bgImage}
-                  alt={service.title}
+                  alt={service.id === 'perforirane-ograje' ? 'Primer balkonske ograje iz lasersko izrezane perforirane pločevine z unikatnim vzorcem' : service.title}
                   className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-all duration-700 group-hover:scale-105"
                 />
                 
@@ -619,7 +623,7 @@ export default function App() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl max-h-[90vh] bg-zinc-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-zinc-800"
+              className="relative w-full max-w-6xl max-h-[90vh] bg-zinc-900 rounded-3xl shadow-2xl overflow-y-auto flex flex-col md:flex-row border border-zinc-800"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -638,20 +642,9 @@ export default function App() {
                   </div>
                   <h2 className="text-3xl font-bold text-white">{selectedService.title}</h2>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-lg mb-8">
+                <p className="text-gray-300 leading-relaxed text-lg mb-4">
                   {selectedService.fullDesc}
                 </p>
-                <a 
-                  href="#kontakt"
-                  onClick={(e) => {
-                    handleNavClick(e, '#kontakt');
-                    setSelectedService(null);
-                  }}
-                  className="w-full inline-flex items-center justify-center px-6 py-4 text-base font-bold text-white bg-lime-500 hover:bg-lime-400 rounded-lg transition-all duration-300 shadow-lg shadow-lime-900/20 hover:shadow-lime-500/30 mt-auto"
-                >
-                  ZAHTEVAJTE PONUDBO
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
               </div>
 
               {/* Right Area: Scrollable Masonry/Grid Gallery */}
@@ -661,9 +654,9 @@ export default function App() {
                     <div 
                       key={index} 
                       onClick={() => setLightboxIndex(index)}
-                      className="relative rounded-xl overflow-hidden aspect-square cursor-pointer group"
+                      className="relative rounded-xl overflow-hidden cursor-pointer group"
                     >
-                      <img src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <img loading="lazy" src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-110" />
                       <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/30 transition-colors"></div>
                     </div>
                   ))}
@@ -754,6 +747,7 @@ export default function App() {
                 className="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-xl bg-zinc-800"
               >
                 <img 
+                  loading="lazy"
                   src={item.src} 
                   alt={item.alt}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -792,6 +786,7 @@ export default function App() {
               onClick={(e) => e.stopPropagation()}
             >
               <img 
+                loading="lazy"
                 src={lightboxImage} 
                 alt="Enlarged view" 
                 className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl" 
