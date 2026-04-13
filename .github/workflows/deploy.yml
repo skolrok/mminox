@@ -1,0 +1,37 @@
+name: Cloudflare Pages Deployment
+
+on:
+  push:
+    branches:
+      - main  # Če se tvoja glavna veja imenuje 'master', to spremeni v 'master'
+  workflow_dispatch: # TA UKAZ TI V GITHUB DODA GUMB ZA ROČNI ZAGON!
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout kode
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalacija paketov
+        run: npm install
+
+      - name: Build projekta
+        run: npm run build
+
+      - name: Deploy na Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'TVOJ_CLOUDFLARE_PROJEKT' # SEM VPIŠI TOČNO IME PROJEKTA V CLOUDFLARE
+          directory: 'dist' # Če uporabljaš Vite, je to 'dist'. Pri Create React App spremeni v 'build'.
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
