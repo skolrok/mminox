@@ -682,9 +682,9 @@ export default function App() {
                       <div 
                         key={index} 
                         onClick={() => setLightboxIndex(index)}
-                        className="relative rounded-xl overflow-hidden cursor-pointer group"
+                        className="relative aspect-square rounded-xl overflow-hidden cursor-pointer group"
                       >
-                        <img loading="lazy" src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-110" />
+                        <img loading="lazy" src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/30 transition-colors"></div>
                       </div>
                     ))}
