@@ -696,7 +696,7 @@ export default function App() {
                   </p>
 
                   {/* Gallery */}
-                  <div className="grid grid-cols-2 gap-2 md:gap-4 lg:gap-6 mt-6">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 lg:gap-6 mt-6">
                     {selectedService.galleryImages?.map((imgUrl: string, index: number) => (
                       <div 
                         key={index} 
