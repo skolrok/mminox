@@ -91,14 +91,33 @@ export default function App() {
   const [activeLegalModal, setActiveLegalModal] = useState<'pravno' | 'zasebnost' | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [hasScrolledPast500, setHasScrolledPast500] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
+      setHasScrolledPast500(window.scrollY > 500);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFooterVisible(entry.isIntersecting);
+      },
+      { root: null, threshold: 0.1 }
+    );
+
+    const footerElement = document.getElementById('kontakt');
+    if (footerElement) {
+      observer.observe(footerElement);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -594,7 +613,7 @@ export default function App() {
               <div 
                 key={service.id}
                 onClick={() => setSelectedService(service)}
-                className="relative p-6 sm:p-8 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800 hover:border-lime-500 transition-all duration-500 h-full flex flex-col bg-zinc-950"
+                className="relative p-6 sm:p-8 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800 hover:border-lime-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:shadow-lime-900/20 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col bg-zinc-950"
               >
                 {/* Background Image - Always visible but dimmed, brightens and scales on hover */}
                 <img
@@ -677,15 +696,14 @@ export default function App() {
                   </p>
 
                   {/* Gallery */}
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 lg:gap-6 mt-6">
+                  <div className="grid grid-cols-2 gap-2 md:gap-4 lg:gap-6 mt-6">
                     {selectedService.galleryImages?.map((imgUrl: string, index: number) => (
                       <div 
                         key={index} 
                         onClick={() => setLightboxIndex(index)}
-                        className="relative aspect-square rounded-xl overflow-hidden cursor-pointer group"
+                        className="relative aspect-square rounded-xl overflow-hidden cursor-pointer group bg-black"
                       >
-                        <img loading="lazy" src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/30 transition-colors"></div>
+                        <img loading="lazy" src={imgUrl} alt={`${selectedService.title} ${index + 1}`} className="w-full h-full object-cover object-center transition-all duration-300 opacity-95 group-hover:opacity-100 group-hover:scale-110" />
                       </div>
                     ))}
                   </div>
@@ -981,6 +999,26 @@ export default function App() {
                 </>
               )}
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* FLOATING CTA BUTTON */}
+      <AnimatePresence>
+        {hasScrolledPast500 && !isFooterVisible && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            className="fixed bottom-24 right-8 z-50"
+          >
+            <button
+              onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 py-3 bg-lime-500 hover:bg-lime-400 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              Naročite brezplačne meritve &rarr;
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
